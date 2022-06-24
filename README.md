@@ -1,13 +1,21 @@
 # V2EX-Notify
+
 V2EX-Notify 用于实现当指定节点出现指定关键词时，通过邮件给订阅者发送通知。
+
 # 开发环境
+
 MySql : 建议使用 8.0 以上\
 JDK : 建议使用 8 以上
+
 # 使用说明
+
 ## 修改信息
+
 1. 修改 application.yml 中的数据库信息
 2. 修改 com.shanhai.v2exnotify.util.MailUtil 50 行与 56行
+
 ## 数据库建表语句
+
 ```
 /*
  Navicat Premium Data Transfer
@@ -96,22 +104,31 @@ CREATE TABLE `t_subscriber` (
 
 SET FOREIGN_KEY_CHECKS = 1;
 ```
+
 ## 插入数据
+
 1. 在 t_node 表中插入节点信息
 2. 在 t_subscriber 插入订阅者信息
 3. 在 t_node_subscription 插入节点与订阅者信心
 4. 在 t_keywords 插入关键词与订阅者信息
 5. 在 t_components 插入 key_name 为 token 的 V站令牌
+
 ## 打包命令
+
 ```
 mvn clean install -Dmaven.test.skip=true
 ```
+
 ## 部署命令
+
 ```
 nohup java -jar v2ex-notify-0.0.1-SNAPSHOT.jar >v2ex_notify.log &
 ```
+
 # 注意事项
+
 如果部署在 Liunx 服务器上，需要检查是否可以 ping 通 v2ex
+
 ```
 ping v2ex.com
 ```
