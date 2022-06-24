@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shanhai.v2exnotify.mapper.SendRecordMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.shanhai.v2exnotify.entity.SendRecord">
+		<id column="id" property="id"/>
+		<result column="topic_id" property="topicId"/>
+		<result column="subscriber" property="subscriber"/>
+	</resultMap>
+	<select id="getRecord" resultType="com.shanhai.v2exnotify.entity.SendRecord">
+		SELECT *
+		FROM t_send_record r
+		WHERE r.topic_id = #{topicId}
+		  AND r.subscriber = #{subscriber}
+	</select>
+
+</mapper>

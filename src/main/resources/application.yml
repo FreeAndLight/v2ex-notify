@@ -1,0 +1,51 @@
+# 应用名称
+spring:
+  application:
+    name: v2ex-notify
+
+  datasource: #定义数据源
+    #127.0.0.1为本机测试的ip，3306是mysql的端口号。serverTimezone是定义时区，照抄就好，mysql高版本需要定义这些东西
+    #useSSL也是某些高版本mysql需要问有没有用SSL连接
+    url: jdbc:mysql://127.0.0.1:3306/v2ex?serverTimezone=GMT%2B8&useSSL=FALSE
+    username: root  #数据库用户名，root为管理员
+    password: root #该数据库用户的密码
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# 应用服务 WEB 访问端口
+
+
+mybatis:
+  config-location: classpath:mybatis.cfg.xml    #  mybatis主配置文件所在路径
+  type-aliases-package: com.demo.drools.entity  #  定义所有操作类的别名所在包
+  mapper-locations:                             #  所有的mapper映射文件
+    - classpath:mapper/*.xml
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+      #数据库类型
+      db-type: MYSQL
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+server:
+  port: 8080
+
+app:
+  workerId: 1
+  dataCenterId: 1

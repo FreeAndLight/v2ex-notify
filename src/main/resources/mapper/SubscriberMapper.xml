@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shanhai.v2exnotify.mapper.SubscriberMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.shanhai.v2exnotify.entity.Subscriber">
+		<id column="id" property="id"/>
+		<result column="subscriber" property="subscriber"/>
+		<result column="name" property="name"/>
+	</resultMap>
+
+	<select id="getSubscriptionInfo" resultType="com.shanhai.v2exnotify.entity.SubscriptionInfo">
+		SELECT n.url,
+		       k.keywords,
+		       s.subscriber
+		FROM t_subscriber s
+			     LEFT JOIN t_keywords k ON s.id = k.subscriber
+			     LEFT JOIN t_node_subscription n_s ON s.id = n_s.subscriber
+			     LEFT JOIN t_node n ON n.id = n_s.node_id
+	</select>
+
+</mapper>
