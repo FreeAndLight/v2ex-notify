@@ -6,7 +6,7 @@ JDK : 建议使用 8 以上
 #使用说明
 ##修改信息
 1. 修改 application.yml 中的数据库信息
-2. 修改 com.shanhai.v2exnotify.util.MailUtil#50;com.shanhai.v2exnotify.util.MailUtil#56
+2. 修改 com.shanhai.v2exnotify.util.MailUtil 50 行与 56行
 ##数据库建表语句
 ```
 /*
