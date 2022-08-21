@@ -122,7 +122,7 @@ mvn clean install -Dmaven.test.skip=true
 ## 部署命令
 
 ```
-nohup java -jar v2ex-notify-0.0.1-SNAPSHOT.jar >v2ex_notify.log &
+nohup java -jar v2ex-notify-0.0.1-SNAPSHOT.jar > v2ex_notify.log &
 ```
 
 # 注意事项
