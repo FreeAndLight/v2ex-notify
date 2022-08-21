@@ -12,7 +12,7 @@ spring:
     username: root
     # 该数据库用户的密码
     password: root
-    # 使用druid数据源
+    # 使用 druid 数据源
     type: com.alibaba.druid.pool.DruidDataSource
 
 
