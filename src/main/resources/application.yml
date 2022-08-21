@@ -32,7 +32,7 @@ mybatis-plus:
   # 以下配置均有默认值,可以不设置
   global-config:
     db-config:
-      # 主键类型 auto : "数据库ID自增"    input : "用户输入 ID"   ID_WORKER : "全局唯一 ID (数字类型唯一 ID )"    UUID : "全局唯一 ID UUID"
+      # 主键类型 auto : "数据库ID自增"    input : "用户输入 ID"   ID_WORKER : "全局唯一 ID (数字类型唯一 ID)"    UUID : "全局唯一 ID UUID"
       id-type: auto
       # 字段策略 ignored : "忽略判断"    not_null : "非 null 判断"    not_empty : "非空判断"
       field-strategy: NOT_EMPTY
