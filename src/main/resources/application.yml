@@ -6,9 +6,9 @@ spring:
   # 定义数据源
   datasource:
     # 127.0.0.1 为本机测试的 ip，3306 是 mysql 的端口号。serverTimezone 是定义时区，照抄就好，mysql 高版本需要定义这些东西
-    #useSSL也是某些高版本mysql需要问有没有用SSL连接
+    # useSSL 也是某些高版本 mysql 需要问有没有用 SSL 连接
     url: jdbc:mysql://127.0.0.1:3306/v2ex?serverTimezone=GMT%2B8&useSSL=FALSE
-    # 数据库用户名，root为管理员
+    # 数据库用户名，root 为管理员
     username: root
     # 该数据库用户的密码
     password: root
@@ -27,7 +27,7 @@ mybatis:
 
 # mybatis-plus 相关配置
 mybatis-plus:
-  # xml扫描，多个目录用逗号或者分号分隔（告诉 mapper 所对应的 xml 文件位置）
+  # xml 扫描，多个目录用逗号或者分号分隔（告诉 mapper 所对应的 xml 文件位置）
   mapper-locations: classpath:mapper/*.xml
   # 以下配置均有默认值,可以不设置
   global-config:
